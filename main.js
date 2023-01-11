@@ -256,3 +256,7 @@ btnPause.addEventListener("click", () => {
 btnStart.addEventListener("click", () => {
   sw.handleStart();
 });
+
+window.addEventListener("click", (e) =>
+  e.target === modalShadow ? sw.closeModal() : true
+);
