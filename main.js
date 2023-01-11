@@ -68,16 +68,18 @@ const Stopwatch = function (stopwatch, timeList, time) {
   };
 
   this.handleStop = function () {
-    time.textContent = `Ostatni czas: ${this.minutes}:${this.seconds
-      .toString()
-      .padStart(2, `0`)}`;
-    timeList.insertAdjacentHTML(
-      "beforeend",
-      createTaskTemplate(this.minutes, this.seconds, this.number)
-    );
-    this.handleReset();
-    time.style.visibility = "visible";
-    this.number++;
+    if (stopWatch.textContent !== "0:00") {
+      time.textContent = `Ostatni czas: ${this.minutes}:${this.seconds
+        .toString()
+        .padStart(2, `0`)}`;
+      timeList.insertAdjacentHTML(
+        "beforeend",
+        createTaskTemplate(this.minutes, this.seconds, this.number)
+      );
+      this.handleReset();
+      time.style.visibility = "visible";
+      this.number++;
+    }
   };
 
   this.handleHistory = function () {
