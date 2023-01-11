@@ -101,10 +101,12 @@ const Stopwatch = function (stopwatch, timeList, time) {
 
   this.openModal = function () {
     modalShadow.style.display = "block";
+    modalShadow.classList.add("modal-animation");
   };
 
   this.closeModal = function () {
     modalShadow.style.display = "none";
+    modalShadow.classList.remove("modal-animation");
   };
 
   this.changeColor = function () {
